@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+body {
+  background: #00c1e8;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 193, 232, 1) 0%,
+    rgba(0, 56, 168, 1) 100%
+  );
+  overflow-y: hidden;
+  max-height: 100dvh;
+}
+
+.animate-marquee {
+  & svg {
+    width: 100%;
+    flex: 0 0 100%;
+    color: var(--secondary-background-color);
+    animation: flow infinite linear;
+  }
+}
+
+.animate-marquee-alternate {
+  & svg {
+    width: 100%;
+    flex: 0 0 100%;
+    color: var(--secondary-background-color);
+    animation: flow-alternate infinite linear;
+  }
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes flow-alternate {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
